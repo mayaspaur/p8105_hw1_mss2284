@@ -57,7 +57,7 @@ as.factor(pull(problem2_df, vec_logical_2))
 
 ```
 
-The dataset has a number of rows`r nrow(pull(problem2_df))`, and number of columns `r ncol(pull(problem2_df))`.
+*The dataset has a number of rows`r nrow(pull(problem2_df))`, and number of columns `r ncol(pull(problem2_df))`.
 
 The mean of the variable x is `r mean(pull(problem2_df, x))`. The median of the variable x is `r median(pull(problem2_df, x))`. The standard deviation of the variable x is `r sd(pull(problem2_df, x))`.
 
