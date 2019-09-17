@@ -55,22 +55,14 @@ problem2_df = tibble(
 as.numeric(problem2_df$vec_logical_2)
 as.factor(problem2_df$vec_logical_2)
 
-ncol(problem2_df)
-nrow(problem2_df)
-mean(problem2_df$x)
-median(problem2_df$x)
-sd(problem2_df$x)
-
-(sum(problem2_df$vec_logical_2, na.rm=TRUE))/(sum(problem2_df$vector_sum))
 ```
 
 *The dataset has a number of rows`r nrow(problem2_df)`, and number of columns `r ncol(problem2_df)`.
 
 The mean of the variable x is `r mean(problem2_df$x)`. The median of the variable x is `r median(problem2_df$x)`. The standard deviation of the variable x is `r sd(problem2_df$x)`.
 
-The proportion of cases for which x + y is greater than one is `r (sum(problem2_df$vec_logical_2, na.rm=TRUE))/(sum(problem2_df$vector_sum)) `
+The proportion of cases for which x + y is greater than one is `r (sum(problem2_df$vec_logical_2, na.rm=TRUE))/(sum(problem2_df))`.
 
-The number of true vs. total number of elements. you are trying to get the length
 
 Scatterplot
 
@@ -86,3 +78,4 @@ ggplot(problem2_df, aes(x = x, y = y, color = as.factor(problem2_df$vec_logical_
 
 ```
  
+ For the scatterplot with the as.numeric variable, the color scale is continuous from light to dark blue to reflect the continuous variable. For the plot using the logical variable and factor variable, there were two colors, to represent the binary (logical) variable, blue for true and orange for false.
