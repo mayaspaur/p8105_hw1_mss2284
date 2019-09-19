@@ -27,8 +27,7 @@ The means were able to be calculated for norm_samp and vec_logical, but not for 
 
 Converting the variables to numeric:
 
-```{r Problem 1 code chunk 2}
-eval = FALSE
+```{r Problem 1 code chunk 2, results='hide', warning=FALSE}
 
 as.numeric(pull(problem1_df, vec_logical))*(pull(problem1_df, norm_samp))
 
@@ -37,7 +36,7 @@ as.factor(pull(problem1_df, vec_logical))*(pull(problem1_df, norm_samp))
 as.numeric(as.factor(pull(problem1_df, vec_logical)))*(pull(problem1_df, norm_samp))
 
 ```
-
+As numeric was able to convert the logical variable (assigns 0 to false and 1 to TRUE). It didn't work for the character variable, it could not be converted to a numeric variable. The factor variable was able to be converted to 3 levels.
 
 ## Problem 2
 
@@ -48,20 +47,18 @@ problem2_df = tibble(
   x = rnorm(500),
   y = rnorm(500),
   vec_logical_2 = x + y > 1,
-  vector_sum = x + y,
-  )
-
-as.numeric(pull(problem2_df, vec_logical_2))
-as.factor(pull(problem2_df, vec_logical_2))
-
+  as.numeric(vec_logical_2),
+  as.factor(vec_logical_2),
+)
 
 ```
 
-*The dataset has a number of rows`r nrow(pull(problem2_df))`, and number of columns `r ncol(pull(problem2_df))`.
+The dataset has a number of rows`r nrow(problem2_df)`, and number of columns `r ncol(problem2_df)`.
 
 The mean of the variable x is `r mean(pull(problem2_df, x))`. The median of the variable x is `r median(pull(problem2_df, x))`. The standard deviation of the variable x is `r sd(pull(problem2_df, x))`.
 
-The proportion of cases for which x + y is greater than one is `r sum(pull(problem2_df, vec_logical_2))/sum(pull(problem2_df, vector_sum))`.
+
+The proportion of cases for which x + y is greater than one is `r mean(pull(problem2_df, vec_logical_2))`.
 
 
 Scatterplot
